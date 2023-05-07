@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const process = require('process');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
@@ -16,6 +17,8 @@ process.on('uncaughtException', (err, origin) => {
 
 const { PORT = 3000 } = process.env;
 const app = express();
+
+app.use(cors());
 
 app.use(helmet());
 app.use(bodyParser.json());
