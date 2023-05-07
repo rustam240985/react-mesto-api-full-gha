@@ -10,7 +10,7 @@ export const configValidate = {
 }
 
 export const configApi = {
-  baseUrl: 'http://api.rustamnigm.students.nomoredomains.monster',
+  baseUrl: 'http://localhost:3000',
   headers: {
     authorization: `Bearer ${localStorage.getItem('token')}`,
     "Content-Type": 'application/json',

@@ -36,14 +36,15 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    Promise.all([api.getUser(), api.getInitialCards()])
-      .then(([dataUser, dataCards]) => {
-        setCurrentUser(dataUser);
-        setCards(dataCards);
-      })
-      .catch(error => {
-        alert(`Ошибка загрузки данных на странице: ${error}`);
-      })
+    loggedIn &&
+      Promise.all([api.getUser(), api.getInitialCards()])
+        .then(([dataUser, dataCards]) => {
+          setCurrentUser(dataUser);
+          setCards(dataCards);
+        })
+        .catch(error => {
+          alert(`Ошибка загрузки данных на странице: ${error}`);
+        })
   }, []);
 
   useEffect(() => {
