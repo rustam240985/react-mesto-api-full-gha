@@ -10,7 +10,7 @@ export const request = (url, options) => {
 }
 
 
-export const BASE_URL = 'http://localhost:3000';
+export const BASE_URL = 'https://api.rustamnigm.students.nomoredomains.monster';
 
 export const register = (password, email) => {
   return request(`${BASE_URL}/signup`, {
