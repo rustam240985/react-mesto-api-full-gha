@@ -1,9 +1,8 @@
 import { configApi } from "./constants";
 
 class Api {
-  constructor({ baseUrl, cohortId, headers }) {
+  constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
-    this._cohortId = cohortId;
     this._headers = headers;
   }
 
