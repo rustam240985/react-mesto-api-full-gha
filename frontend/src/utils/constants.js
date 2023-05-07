@@ -13,7 +13,7 @@ export const configValidate = {
 export const configApi = {
   baseUrl: 'https://api.rustamnigm.students.nomoredomains.monster',
   headers: {
-    authorization: `Bearer ${token}`,
+    authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDU3ODQ0YmQ5MmI1MGU5ODViZmU0NzIiLCJpYXQiOjE2ODM0NjYyMTQsImV4cCI6MTY4NDA3MTAxNH0.L3PsGlbB9L1crLdWgqYMFQ8yUk6r828iXh2lD1ObQak`,
     "Content-Type": 'application/json',
   },
 };
