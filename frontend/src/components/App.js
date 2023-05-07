@@ -73,7 +73,7 @@ function App() {
       auth.checkToken(jwt)
         .then((res) => {
           if (res) {
-            setEmail(res.user.email)
+            setEmail(res.email)
             setLoggedIn(true);
             navigate("/", { replace: true })
           }
@@ -102,7 +102,7 @@ function App() {
   function handleRegister(formValue) {
     auth.register(formValue.password, formValue.email)
       .then((res) => {
-        if (res.user) {
+        if (res) {
           navigate('/sign-in', { replace: true });
           setRegistered(true);
           return setMessage('Вы успешно зарегистрировались!');
