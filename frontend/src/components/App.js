@@ -38,7 +38,7 @@ function App() {
 
   useEffect(() => {
     handleTokenCheck();
-  }, [])
+  }, [loggedIn])
 
   useEffect(() => {
     loggedIn &&
