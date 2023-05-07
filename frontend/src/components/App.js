@@ -26,18 +26,14 @@ function App() {
   const [isEditAvatarPopupOpen, setEditAvatarPopupOpen] = useState(false);
   const [isInfoTooltipOpen, setInfoTooltipOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState({});
-  const [loggedIn, setLoggedIn] = useState(false)
   const [currentUser, setCurrentUser] = useState({ name: "Джек", about: "Воробей" });
   const [cards, setCards] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false)
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [isRegistered, setRegistered] = useState(false);
 
   const navigate = useNavigate();
-
-  useEffect(() => {
-    handleTokenCheck();
-  }, [])
 
   useEffect(() => {
     loggedIn &&
@@ -50,6 +46,10 @@ function App() {
           alert(`Ошибка загрузки данных на странице: ${error}`);
         })
   }, []);
+
+  useEffect(() => {
+    handleTokenCheck();
+  }, [])
 
   const isOpen = isEditAvatarPopupOpen || isEditProfilePopupOpen || isAddPlacePopupOpen || selectedCard.isOpen
 
