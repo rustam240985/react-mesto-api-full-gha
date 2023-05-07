@@ -21,6 +21,7 @@ import PageNotFound from './PageNotFound';
 
 function App() {
   const [loading, setLoading] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false)
   const [isEditProfilePopupOpen, setEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setAddPlacePopupOpen] = useState(false);
   const [isEditAvatarPopupOpen, setEditAvatarPopupOpen] = useState(false);
@@ -28,12 +29,16 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
   const [currentUser, setCurrentUser] = useState({ name: "Джек", about: "Воробей" });
   const [cards, setCards] = useState([]);
-  const [loggedIn, setLoggedIn] = useState(false)
+
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [isRegistered, setRegistered] = useState(false);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    handleTokenCheck();
+  }, [])
 
   useEffect(() => {
     loggedIn &&
@@ -47,9 +52,7 @@ function App() {
         })
   }, []);
 
-  useEffect(() => {
-    handleTokenCheck();
-  }, [])
+
 
   const isOpen = isEditAvatarPopupOpen || isEditProfilePopupOpen || isAddPlacePopupOpen || selectedCard.isOpen
 
