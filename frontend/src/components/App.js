@@ -37,6 +37,7 @@ function App() {
 
   useEffect(() => {
     handleTokenCheck();
+    console.log(loggedIn);
     loggedIn &&
       Promise.all([api.getUser(), api.getInitialCards()])
         .then(([dataUser, dataCards]) => {
