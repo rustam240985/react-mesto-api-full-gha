@@ -1,0 +1,16 @@
+.header__toggle-sidebar {
+  display: none;
+  width: 26px;
+  height: 22px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+@media screen and (max-width: 420px) {
+  .header__toggle-sidebar_active {
+    display: block;
+    padding: 0;
+  }
+
+}

@@ -1,0 +1,14 @@
+.header__link {
+  all: unset;
+  color: inherit;
+  font-weight: 400;
+  font-size: inherit;
+  line-height: 1.22;
+  text-align: right;
+  cursor: pointer;
+  transition: opacity .6s ease-in;
+}
+
+.header__link:hover {
+  opacity: 0.6;
+}

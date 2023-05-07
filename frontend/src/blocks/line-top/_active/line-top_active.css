@@ -1,0 +1,7 @@
+.line-top_active {
+  transform: rotate(45deg);
+  top: 0;
+  transition: top 0.2s linear;
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}

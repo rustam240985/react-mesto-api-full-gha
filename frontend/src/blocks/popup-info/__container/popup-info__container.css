@@ -1,0 +1,9 @@
+.popup-info__container {
+  max-width: 430px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 32px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}

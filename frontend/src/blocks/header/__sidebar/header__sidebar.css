@@ -1,0 +1,12 @@
+.header__sidebar {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+@media screen and (max-width: 420px) {
+  .header__sidebar {
+    padding-top: 150px;
+    padding-bottom: 40px;
+  }
+
+}

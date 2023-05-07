@@ -1,0 +1,27 @@
+.header__menu {
+  display: flex;
+  margin-left: auto;
+  padding-top: 6px;
+  display: flex;
+  gap: 24px;
+  align-items: baseline;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 425px) {
+  .header__menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-left: 0;
+    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+    transform: translateY(-150%);
+    transition: transform 0.3s ease-in;
+  }
+
+}

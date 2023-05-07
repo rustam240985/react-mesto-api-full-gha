@@ -1,0 +1,9 @@
+.sign__login-link {
+  all: unset;
+  cursor: pointer;
+  transition: opacity .6s ease-in;
+}
+
+.sign__login-link:hover {
+  opacity: 0.6;
+}

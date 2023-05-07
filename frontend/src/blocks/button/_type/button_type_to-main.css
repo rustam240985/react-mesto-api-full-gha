@@ -1,0 +1,9 @@
+.button_type_to-main {
+  all: unset;
+  cursor: pointer;
+  transition: opacity .8s ease;
+}
+
+.button_type_to-main:hover {
+  opacity: 0.6;
+}

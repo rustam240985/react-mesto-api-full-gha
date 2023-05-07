@@ -1,0 +1,11 @@
+.header__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: opacity .6s ease-in;
+}
+
+.header__btn:hover {
+  opacity: 0.6;
+}
