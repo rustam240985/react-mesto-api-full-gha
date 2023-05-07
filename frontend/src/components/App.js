@@ -36,6 +36,10 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    handleTokenCheck();
+  }, [])
+
+  useEffect(() => {
     loggedIn &&
       Promise.all([api.getUser(), api.getInitialCards()])
         .then(([dataUser, dataCards]) => {
@@ -46,10 +50,6 @@ function App() {
           alert(`Ошибка загрузки данных на странице: ${error}`);
         })
   }, []);
-
-  useEffect(() => {
-    handleTokenCheck();
-  }, [])
 
   const isOpen = isEditAvatarPopupOpen || isEditProfilePopupOpen || isAddPlacePopupOpen || selectedCard.isOpen
 
