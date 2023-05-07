@@ -26,9 +26,9 @@ function App() {
   const [isEditAvatarPopupOpen, setEditAvatarPopupOpen] = useState(false);
   const [isInfoTooltipOpen, setInfoTooltipOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState({});
+  const [loggedIn, setLoggedIn] = useState(false)
   const [currentUser, setCurrentUser] = useState({ name: "Джек", about: "Воробей" });
   const [cards, setCards] = useState([]);
-  const [loggedIn, setLoggedIn] = useState(false)
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [isRegistered, setRegistered] = useState(false);
@@ -45,7 +45,7 @@ function App() {
         .catch(error => {
           alert(`Ошибка загрузки данных на странице: ${error}`);
         })
-  }, [loggedIn]);
+  }, []);
 
   useEffect(() => {
     handleTokenCheck();
