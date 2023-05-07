@@ -10,7 +10,7 @@ export const request = (url, options) => {
 }
 
 
-export const BASE_URL = 'http://localgost:3000';
+export const BASE_URL = 'http://localhost:3000';
 
 export const register = (password, email) => {
   return request(`${BASE_URL}/signup`, {
