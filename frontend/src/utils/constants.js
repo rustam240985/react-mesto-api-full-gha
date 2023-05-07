@@ -1,4 +1,5 @@
 // Конфиг валидации
+const token = localStorage.getItem('jwt');
 
 export const configValidate = {
   formSelector: '.popup__form',
@@ -12,7 +13,7 @@ export const configValidate = {
 export const configApi = {
   baseUrl: 'https://api.rustamnigm.students.nomoredomains.monster',
   headers: {
-    authorization: `Bearer ${localStorage.getItem('jwt')}`,
+    authorization: `Bearer ${token}`,
     "Content-Type": 'application/json',
   },
 };
