@@ -10,6 +10,7 @@ const { createUser, login } = require('./controllers/users');
 const auth = require('./middlewares/auth');
 const { errorsAll } = require('./middlewares/errors');
 const { validateCreateUser, validateLogin } = require('./middlewares/validate-req-user');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 process.on('uncaughtException', (err, origin) => {
   console.log(`${origin} ${err.name} c текстом ${err.message} не была обработана. Обратите внимание!`);
@@ -24,10 +25,14 @@ app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(requestLogger);
+
 app.post('/signin', validateLogin, login);
 app.post('/signup', validateCreateUser, createUser);
 
 app.use(auth, router);
+
+app.use(errorLogger);
 
 app.use(errors());
 

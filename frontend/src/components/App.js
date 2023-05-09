@@ -3,7 +3,7 @@ import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import { CardContext } from '../contexts/CardContext';
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
-import api from '../utils/Api';
+import Api from '../utils/Api';
 import Footer from './Footer';
 import Header from './Header';
 import ImagePopup from './ImagePopup';
@@ -27,7 +27,7 @@ function App() {
   const [isEditAvatarPopupOpen, setEditAvatarPopupOpen] = useState(false);
   const [isInfoTooltipOpen, setInfoTooltipOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState({});
-  const [currentUser, setCurrentUser] = useState({ name: "Джек", about: "Воробей" });
+  const [currentUser, setCurrentUser] = useState({});
   const [cards, setCards] = useState([]);
 
   const [email, setEmail] = useState('');
@@ -36,9 +36,17 @@ function App() {
 
   const navigate = useNavigate();
 
+  const api = new Api({
+    baseUrl: 'https://api.rustamnigm.students.nomoredomains.monster',
+    headers: {
+      authorization: `Bearer ${localStorage.getItem('jwt')}`,
+      "Content-Type": 'application/json',
+    },
+  });
+
   useEffect(() => {
     handleTokenCheck();
-  }, [loggedIn])
+  }, [])
 
   useEffect(() => {
     loggedIn &&
@@ -50,7 +58,7 @@ function App() {
         .catch(error => {
           alert(`Ошибка загрузки данных на странице: ${error}`);
         })
-  }, []);
+  }, [loggedIn]);
 
 
 

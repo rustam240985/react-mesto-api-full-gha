@@ -1,5 +1,3 @@
-import { configApi } from "./constants";
-
 class Api {
   constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
@@ -86,6 +84,4 @@ class Api {
 
 }
 
-const api = new Api(configApi);
-
-export default api;
+export default Api;
