@@ -13,9 +13,9 @@ const { errorsAll } = require('./middlewares/errors');
 const { validateCreateUser, validateLogin } = require('./middlewares/validate-req-user');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-process.on('uncaughtException', (err, origin) => {
-  console.log(`${origin} ${err.name} c текстом ${err.message} не была обработана. Обратите внимание!`);
-});
+/* здесь был глобальный обработчик ошибок,
+подписанный на событие uncaughtException встроенного модуля process,
+он тоже не дает серверу упасть */
 
 const { PORT = 3000 } = process.env;
 const app = express();
@@ -27,6 +27,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(requestLogger);
+
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 
 app.post('/signin', validateLogin, login);
 app.post('/signup', validateCreateUser, createUser);
