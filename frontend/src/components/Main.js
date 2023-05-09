@@ -19,7 +19,7 @@ function Main(props) {
       link: card.link,
       name: card.name
     }
-  ))
+  ));
 
   return (
     <main className="content">

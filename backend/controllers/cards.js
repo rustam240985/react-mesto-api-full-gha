@@ -31,7 +31,7 @@ const getCards = (req, res, next) => {
   Card.find({})
     .populate('likes')
     .populate('owner')
-    .then((cards) => res.send(cards))
+    .then((cards) => res.send(cards.reverse()))
     .catch(next);
 };
 
