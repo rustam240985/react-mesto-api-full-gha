@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+require('dotenv').config();
 const process = require('process');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');

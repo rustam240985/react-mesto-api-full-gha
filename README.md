@@ -6,7 +6,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.54.237
+IP 158.160.54.237
 
 Frontend https://rustamnigm.students.nomoredomains.monster
 
